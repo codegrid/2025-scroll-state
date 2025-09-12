@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    body {
+      display: flex;
+      gap: 20px;
+    }
+
+    .container {
+      container-type: scroll-state;
+      height: 300px;
+      overflow: auto;
+    }
+
+    @container scroll-state(scrollable: top) {
+      p { color: red; }
+    }
+
+    .test-1 {
+      width: 200px;
+      border: 3px solid tomato;
+    }
+
+    .test-2 {
+      display: flex;
+      width: 200px;
+      gap: 10px;
+      border: 3px solid limegreen;
+    }
+  </style>
+  <style>
+  @supports not (container-type: scroll-state) {
+    body::before {
+      /* 日本語で */
+      content: "お使いのブラウザは、scroll-stateのコンテナクエリーをサポートしていません。";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container test-1">
+    <p>
+      The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+    </p>
+    <p>
+      The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+    </p>
+    <p>
+      The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+    </p>
+    <p>
+      The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+    </p>
+  </div>
+
+  <div class="container test-2">
+      <p>
+      The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+    </p>
+    <p>
+      The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+    </p>
+    <p>
+      The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+    </p>
+    <p>
+      The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.
+    </p>
+  </div>
+</body>
+</html>

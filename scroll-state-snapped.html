@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    html {
+      overflow: hidden;
+    }
+
+    body {
+      margin: 0;
+      overflow: auto;
+    }
+
+    body {
+      scroll-snap-type: y mandatory;
+    }
+
+    .ScrollSnap-item {
+      scroll-snap-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 50vh;
+      text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.3);
+      container-type: scroll-state; /* 追記 */
+    }
+
+    /* 追記 */
+    .ScrollSnap-item > span {
+      scale: 1.2;
+      opacity: 0;
+      transition: all 0.4s;
+    }
+    @container scroll-state(snapped: y) {
+      .ScrollSnap-item > span {
+        opacity: 1;
+        scale: 1;
+      }
+    }
+
+
+    .ScrollSnap-item:nth-child(1) {
+      background-color: floralwhite;
+    }
+
+    .ScrollSnap-item:nth-child(2) {
+      background-color: deepskyblue;
+    }
+
+    .ScrollSnap-item:nth-child(3) {
+      background-color: yellowgreen;
+    }
+
+    .ScrollSnap-item:nth-child(4) {
+      background-color: tomato;
+    }
+
+    .ScrollSnap-item:nth-child(5) {
+      background-color: darkslategray;
+    }
+  </style>
+  <style>
+  @supports not (container-type: scroll-state) {
+    body::before {
+      /* 日本語で */
+      content: "お使いのブラウザは、scroll-stateのコンテナクエリーをサポートしていません。";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<div class="ScrollSnap-item"><span>1</span></div>
+<div class="ScrollSnap-item"><span>2</span></div>
+<div class="ScrollSnap-item"><span>3</span></div>
+<div class="ScrollSnap-item"><span>4</span></div>
+<div class="ScrollSnap-item"><span>5</span></div>
+
+</body>
+</html>
