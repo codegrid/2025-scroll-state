@@ -37,9 +37,9 @@
 
     /* 追記 */
     .ScrollSnap-item > span {
-      scale: 1.2;
+      scale: 1.5;
       opacity: 0;
-      transition: all 0.4s;
+      transition: all 2s 0.5s; /* 0.5s遅らせて2sかけて変化する */
     }
     @container scroll-state(snapped: y) {
       .ScrollSnap-item > span {
