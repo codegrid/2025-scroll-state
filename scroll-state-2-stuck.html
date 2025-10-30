@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    .scroller {
+      width: 300px;
+      height: 300px;
+      overflow: auto;
+      margin: 0 auto;
+      background-color: #60969b;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .key {
+      container-type: scroll-state;
+      position: sticky;
+      top: 0;
+      font-size: 24px;
+    }
+
+    .key > .header {
+      display: block;
+      font-weight: bold;
+      padding: 8px 16px;
+      color: #cae4ff;
+      font-size: 18px;
+      transition: 0.2s;
+
+      @container scroll-state(stuck: top) {
+        background-color: #123a3c;
+        box-shadow: 0 2px 3px #0003;
+      }
+    }
+
+    .value {
+      margin: 0;
+      padding: 8px 16px;
+    }
+
+    .value + .key {
+      margin-top: 16px;
+    }
+  </style>
+  <style>
+  @supports not (container-type: scroll-state) {
+    body::before {
+      /* 日本語で */
+      content: "お使いのブラウザは、scroll-stateのコンテナクエリーをサポートしていません。";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <div class="scroller">
+
+    <div class="key"><span class="header">あ</span></div>
+    <div class="value">あし</div>
+    <div class="value">あり</div>
+    <div class="value">あめ</div>
+    <div class="value">あさ</div>
+    <div class="value">あお</div>
+
+    <div class="key"><span class="header">か</span></div>
+    <div class="value">かき</div>
+    <div class="value">かもめ</div>
+    <div class="value">かさ</div>
+    <div class="value">かに</div>
+    <div class="value">かぜ</div>
+
+    <div class="key"><span class="header">さ</span></div>
+    <div class="value">さくら</div>
+    <div class="value">さかな</div>
+    <div class="value">さる</div>
+    <div class="value">さと</div>
+    <div class="value">さとう</div>
+
+    <div class="key"><span class="header">た</span></div>
+    <div class="value">たけ</div>
+    <div class="value">たぬき</div>
+    <div class="value">たまご</div>
+    <div class="value">たいこ</div>
+    <div class="value">たに</div>
+
+    <div class="key"><span class="header">な</span></div>
+    <div class="value">なし</div>
+    <div class="value">なす</div>
+    <div class="value">なべ</div>
+    <div class="value">なか</div>
+    <div class="value">なみ</div>
+
+    <div class="key"><span class="header">は</span></div>
+    <div class="value">はな</div>
+    <div class="value">はと</div>
+    <div class="value">はし</div>
+    <div class="value">はる</div>
+    <div class="value">はやし</div>
+
+    <div class="key"><span class="header">ま</span></div>
+    <div class="value">まつ</div>
+    <div class="value">まめ</div>
+    <div class="value">まど</div>
+    <div class="value">まち</div>
+    <div class="value">まんが</div>
+
+    <div class="key"><span class="header">や</span></div>
+    <div class="value">やま</div>
+    <div class="value">やぎ</div>
+    <div class="value">やね</div>
+    <div class="value">やさい</div>
+    <div class="value">やし</div>
+
+    <div class="key"><span class="header">ら</span></div>
+    <div class="value">らいおん</div>
+    <div class="value">らくだ</div>
+    
+  </div>
+
+
+</body>
+</html>
