@@ -6,14 +6,17 @@
   <title>Demo</title>
   <style>
     ul {
+      box-sizing: border-box;
       display: grid;
       grid-auto-flow: row;
       gap: 16px;
       margin: 0;
       padding: 16px;
       list-style: none;
-      width: 500px;
+      max-width: 500px;
+      width: 100%;
       height: 290px;
+      margin: 0 auto;
       overflow-y: auto;
       overscroll-behavior-y: contain;
       scroll-snap-type: y mandatory;
@@ -27,7 +30,7 @@
 
     li {
       position: relative;
-      width: 450px;
+      width: 300px;
       height: 280px;
       container-type: scroll-state;
       scroll-snap-align: center;
@@ -40,7 +43,7 @@
       height: 100%;
       background-color: #ccc;
       padding: 16px;
-      font-size: 40px;
+      font-size: 24px;
       line-height: 1.2;
       font-feature-settings: "palt";
       text-decoration: none;
@@ -57,6 +60,7 @@
       padding: 16px;
       transition: 0.2s;
       pointer-events: none;
+      font-size: 14px;
 
       @container scroll-state(snapped: y) {
         translate: 0 0;
